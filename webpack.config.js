@@ -6,6 +6,8 @@ const { loader } = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: "development",
+  devtool: "source-map",
+  mode: "development",
   entry: "./src/javascripts/main.js",
   output: {
     filename: "./javascripts/main.js",
@@ -25,14 +27,12 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
-              presets: [
-                ['@babel/preset-env', { "targets": "> 0.2%, not dead" }]
-              ],
-            }
-          }
-        ]
+              presets: [["@babel/preset-env", { targets: "> 0.2%, not dead" }]],
+            },
+          },
+        ],
       },
       {
         test: /\.(css|sass|scss)/,
@@ -77,7 +77,17 @@ module.exports = {
         generator: {
           filename: "images/[name][ext]",
         },
-        use: [],
+        use: [
+          {
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65,
+              }
+            },
+          },
+        ],
       },
       {
         test: /\.pug/,
