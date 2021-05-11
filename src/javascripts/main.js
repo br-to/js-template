@@ -1,5 +1,6 @@
 import '../stylesheets/main.scss';
 import './reactApp.jsx';
+import add from './test.ts';
 
 console.log("kobara");
 
@@ -8,3 +9,4 @@ const kobara = () => {
 }
 
 kobara();
+console.log(add(6, 7));

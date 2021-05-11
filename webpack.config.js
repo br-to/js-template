@@ -23,13 +23,23 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(ts|tsx)/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader",
+          },
+        ],
+      },
+      {
         test: /\.(js|jsx)/,
         exclude: /node_modules/,
         use: [
           {
             loader: "babel-loader",
             options: {
-              presets: [["@babel/preset-env", { targets: "> 0.25%, not dead" }],
+              presets: [
+                ["@babel/preset-env", { targets: "> 0.25%, not dead" }],
                 "@babel/preset-react",
               ],
             },
@@ -86,7 +96,7 @@ module.exports = {
               mozjpeg: {
                 progressive: true,
                 quality: 65,
-              }
+              },
             },
           },
         ],
