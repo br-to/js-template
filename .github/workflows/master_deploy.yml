@@ -38,7 +38,7 @@ jobs:
           name: Artifact ${{ github.sha }}
           path: ./dist/
 
-deploy:
+  deploy:
     runs-on:  ubuntu-latest
     needs:    build
 
