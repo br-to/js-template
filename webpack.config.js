@@ -6,12 +6,13 @@ const { loader } = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: "development",
-  devtool: "source-map",
+  devtool: "eval-source-map",
   mode: "development",
   entry: "./src/javascripts/main.js",
   output: {
     filename: "./javascripts/main.js",
     path: path.resolve(__dirname, "./dist"),
+    publicPath: '/'
   },
   devServer: {
     //ルートディレクトリの指定
