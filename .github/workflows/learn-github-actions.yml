@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: On Which Branch & Commit SHA
-        run: echo Build \"${{ github.head_red }}" \ Commit\" ${GITHUB_SHA}\"
+        run: echo Build \"${{ github.head_ref }}\" Commit \"${GITHUB_SHA}\"
       - name: Slack Start
         uses: rtCamp/action-slack-notify@master
         env:
